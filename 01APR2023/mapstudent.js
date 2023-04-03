@@ -9,7 +9,7 @@ const students = [
   { name: "Linda", scores: [87, 100, 98] },
 ];
 
-// Use map to calculate the average test score for each student
+// Use forEach to calculate the average test score for each student
 
 students.forEach(student => {
    const studentScores = student.scores
@@ -20,9 +20,6 @@ students.forEach(student => {
   const average = sum/studentScores.length;
   student.average = average;
 });
-
- 
-
 
 
 //avarage = total_score/student.scores.length
