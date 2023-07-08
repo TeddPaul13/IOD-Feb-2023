@@ -1,9 +1,9 @@
 "use strict";
 let Models = require("../models"); //matches index.js
-const getUsers = (res) => {
+const getPosts = (res) => {
   //finds all users
 
-  Models.User.find()
+  Models.Post.find()
     .then(function (data) {
       res.send({ result: 200, data: data });
     })
@@ -11,11 +11,12 @@ const getUsers = (res) => {
       console.log(err);
     });
 };
-const createUser = (data, res) => {
-  //creates a new user using JSON data POSTed in request
-  //body
+const createPost = (data, res) => {
+  //creates a new user using JSON data POSTed in request body
 
-  new Models.User(data)
+  //validation code for the user ID HERE
+
+  new Models.Post(data)
     .save()
     .then(function (data) {
       res.send({ result: 200, data: data });
@@ -26,6 +27,6 @@ const createUser = (data, res) => {
 };
 
 module.exports = {
-  getUsers,
-  createUser,
+  getPosts,
+  createPost,
 };

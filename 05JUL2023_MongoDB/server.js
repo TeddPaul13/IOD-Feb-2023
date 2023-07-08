@@ -4,11 +4,16 @@ const dbConnect = require("./dbConnect");
 const app = express();
 require("dotenv").config();
 
+app.use(express.json());
+
+let postRoutes = require('./routes/postRoutes')
+app.use('/api/posts', postRoutes)
+
 let userRoutes = require('./routes/userRoutes')
 app.use('/api/users', userRoutes)
 // parse requests of content-type -application/json
 
-app.use(express.json());
+
 app.get("/", (req, res) => {
 res.json({ message: "Welcome to my MongoDB application." });
 });
