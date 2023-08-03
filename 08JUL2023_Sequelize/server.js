@@ -1,4 +1,5 @@
 const cors = require('cors')
+const bodyParser = require('body-parser'); // added for jwt
 
 let express = require("express");
 
@@ -8,6 +9,10 @@ dbConnect.connectMysql();
 
 const port = process.env.PORT || 8080;
 app.use(express.json());
+app.use(bodyParser.json()); // added for jwt
+app.use(bodyParser.urlencoded({   // added for jwt
+  extended: true
+}));
 app.use(cors())
 
 //Set Router
