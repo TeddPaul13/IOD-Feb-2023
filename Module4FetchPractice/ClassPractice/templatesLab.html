@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e3f2fd;
+        }
+
+        .card {
+            padding: 10px;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 3em;
+            padding: 0 0 10px 0;
+        }
+
+        .card-description {
+            font-weight: 400;
+            font-size: 2em
+        }
+    </style>
+</head>
+
+<body>
+    <template id="card-template">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title"></div>
+                <div class="card-text"></div>
+            </div>
+        </div>
+    </template>
+    <div id="card-list"></div>
+</body>
+<script>
+    function addCard(title) {
+        const template = document.getElementById("card-template").content.cloneNode(true);
+        template.querySelector('.card-title').innerText = title;
+        template.querySelector('.card-text').innerText = "The host speaks that language";
+        document.querySelector('#card-list').appendChild(template);
+    }
+    if ('content' in document.createElement('template')) {
+        addCard();
+    }
+
+    const fetchAirbnbDataByLocation = async() => {
+  const options = {
+    method: "GET",
+  };
+
+  let response = await fetch( `https://api.squiggle.com.au/?q=teams`,
+    options
+  );
+  
+  if (response.status === 200) {
+    response = await response.json();
+    console.log(response)
+
+    response.forEach(hostLanguage =>{
+        for (let key in hostLanguage){
+            console.log(`${hostLanguage[key]}`)
+        }
+
+    })
+      }
+    //Adding data back to HTM
+  };
+
+fetchAirbnbDataByLocation();
+</script>
+</html>

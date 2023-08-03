@@ -1,0 +1,26 @@
+.flex-container{
+    display: flex;
+
+}
+
+.flex-center{
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.flex-item-1, .flex-item-2,.flex-item-3,.flex-item-4{
+    display: flex;
+    flex: 20px;
+    justify-content: space-around;
+}
+
+.itemcenter{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-basis-item-50{
+    flex-basis: 50%;
+    flex-wrap: wrap;
+}

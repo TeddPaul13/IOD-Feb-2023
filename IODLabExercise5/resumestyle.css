@@ -1,0 +1,28 @@
+.personalDetails{
+    background-color: rgb(230, 241, 131);
+}
+.hr{
+    height: 10px;
+}
+.keydetails{
+    background-color: rgb(238, 245, 216);
+}
+#cvPrint{
+    background-color: rgb(100, 231, 49);
+    font-size: 25px;
+    border: none;
+    color:white;
+    padding: 10px 30px;
+   
+
+}
+#cvPrint:hover{
+    color: rgb(5, 65, 65);
+}
+.forButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

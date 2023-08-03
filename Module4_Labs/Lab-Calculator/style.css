@@ -1,0 +1,19 @@
+.margin10{
+    margin: 10px;
+    background-color: blueviolet;
+}
+.container{
+    background-color: aquamarine;
+}
+.tocheck{
+    background-color: orchid;
+}
+.check2{
+    background-color: brown;
+}
+.setWidth{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    margin:5px;
+}
